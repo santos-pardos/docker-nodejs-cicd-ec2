@@ -30,8 +30,8 @@ jobs:
         key: ${{ secrets.MY_EC2_SSH_KEY }}
         
         run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${EC2_USERNAME}@${EC2_HOST} '
+          sudo echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          sudo ssh -o StrictHostKeyChecking=no -i private_key ubuntu@54.75.220.108 '
 
               # Now we have got the access of EC2 and we will start the deploy .
               sudo docker pull ${{ secrets.DOCKER_REPO_URL }}/sanvalero:dummy-server
