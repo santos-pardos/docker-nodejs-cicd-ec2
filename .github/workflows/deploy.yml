@@ -12,7 +12,7 @@ jobs:
       - name: Build & Deploy
         env:
             PRIVATE_KEY: ${{ secrets.MY_EC2_SSH_KEY }}
-            HOSTNAME: ${{secrets.EC2_HOST}}
+            HOSTNAME: 54.75.220.108
             USER_NAME: ${{secrets.EC2_USERNAME}}
       
         run: |
