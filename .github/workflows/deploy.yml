@@ -21,16 +21,6 @@ jobs:
         docker tag dummy-server:latest ${{ secrets.DOCKER_REPO_URL }}/sanvalero:dummy-server
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push ${{ secrets.DOCKER_REPO_URL }}/sanvalero:dummy-server
-    
-    - name: SSH into EC2 instance and deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.MY_EC2_SSH_KEY }}
-        port: 22
-        script_stop: true
-        script: ls -all
 
     - name: SSH into EC2 instance and deploy
       uses: actions/checkout@v2 
