@@ -32,5 +32,5 @@ jobs:
           sudo docker pull ${{ secrets.DOCKER_REPO_URL }}/sanvalero:dummy-server
           sudo docker stop dummy-server || true
           sudo docker rm dummy-server || true
-          sudo docker run -d -p 3000:3000 --name my-node-app ${{ secrets.DOCKER_REPO_URL }}/sanvalero:dummy-server
+          sudo docker run -d -p 3000:3000 --name dummy-server ${{ secrets.DOCKER_REPO_URL }}/sanvalero:dummy-server
 
