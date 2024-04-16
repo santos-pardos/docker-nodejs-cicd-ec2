@@ -5,7 +5,7 @@ const PORT = 3002;
 
 app.get('/', (request, response) => {
 response.status(200).json({
-message: 'Hello Docker!',
+message: 'Hello Docker! V2',
 });
 });
 
